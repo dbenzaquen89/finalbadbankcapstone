@@ -12,7 +12,8 @@ npm install
 Run the Node server
 node index.js
 
-Navigate to http://localhost:3000/ to run the application
+Start a local server on your machine and run the server. 
+Open the local server webpage and application should be running.
 
 # Technology used: 
 React, Node, Express, Mongodb, Javascript, HTML, CSS
