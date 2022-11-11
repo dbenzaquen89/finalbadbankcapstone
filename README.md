@@ -1,5 +1,4 @@
 # Project Title: Bad Bank Refractored- Capstone Project
-# Fullstack-banking
 
 # Description/Motivation:
 This application was created as a capstone project to showcase the skills learned thorughout my MIT Bootcamp. The banking application allows a user to create an account, login, deposit and withdraw, it also gives the admin the ability to see the registered users.(pending)
