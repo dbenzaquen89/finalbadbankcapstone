@@ -3,6 +3,9 @@ const Link       = ReactRouterDOM.Link;
 const HashRouter = ReactRouterDOM.HashRouter;
 const BrowserRouter = ReactRouterDOM.BrowserRouter;
 const UserContext = React.createContext(null);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 
 
 // Your web app's Firebase configuration
@@ -14,9 +17,6 @@ const firebaseConfig = {
   messagingSenderId: "1033110673105",
   appId: "1:1033110673105:web:0185ff387d639b6d2357f0"
 };
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
 
 
 function Card(props){
