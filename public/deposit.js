@@ -52,7 +52,7 @@ function Deposit(){
       .then(text => {
           try {
               const data = JSON.parse(text);
-              props.setStatus(JSON.stringify(data.value));
+              props.setStatus(JSON.stringify(data.amount));
               props.setShow(false);
               console.log('JSON:', data);
           } catch(err) {
