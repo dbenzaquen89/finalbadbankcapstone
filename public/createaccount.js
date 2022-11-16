@@ -11,7 +11,7 @@ function CreateAccount() {
   function validate(field, label) {
       if (!field) {
           setStatus(`Please enter a valid ${label}`);
-          setTimeout(() => setStatus(''), 3000);
+          setTimeout(() => setStatus(''), 2000);
           return false;
       }
       return true;
@@ -19,7 +19,7 @@ function CreateAccount() {
   
   function checkPassword(password) {
       if(password.length < 5){
-          alert('Password must be at least 5 characters long');
+          alert('Password must be at least 5 characters in length');
           return false;
       }
       return true;
@@ -48,7 +48,13 @@ function CreateAccount() {
 
       const url = `/account/create/${name}/${email}/${password}`;
       (async () => {
-          var res = await fetch(url, {method: 'POST', mode: 'cors'});
+          var res = await fetch('url', 
+          {method: 'POST', 
+          mode: 'cors',
+         cache: 'no-cache',
+        credentials: 'same-origin',
+        });
+
           var data = await res.json();
           console.log(data);
           ctx.user.name = name;
@@ -73,7 +79,7 @@ function CreateAccount() {
   
       <Card 
       bgcolor="primary"
-      txtcolor="White"
+      txtcolor="white"
       header="Create Account"
       title="Interested in creating an account? Complete and submit the form below"
       status={status}
