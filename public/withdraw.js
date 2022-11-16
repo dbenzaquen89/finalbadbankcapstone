@@ -67,9 +67,7 @@ function Withdraw(){
   
       <button type="submit" 
         className="btn btn-light" 
-        onClick={handle}>
-          Withdraw
-      </button>
+        onClick={handle}>Withdraw</button>
   
     </>);
   }
