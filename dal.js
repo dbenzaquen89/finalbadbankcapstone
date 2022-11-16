@@ -13,9 +13,9 @@ MongoClient.connect(url, {useUnifiedTopology: true}, function(err,cleint){
 //create user account
 
 function create(name, email, password){
-    return new Promise((resile, reject) => {
+    return new Promise((resolve, reject) => {
         const collection = db.collection('users');
-        const doc = {name, email, passoword, balance: 0};
+        const doc = {name, email, password, balance: 0};
         collection.insertOne(doc, {w:1}, function(err, result) {
             err ? reject(err) : resolve(doc);
         });
@@ -86,3 +86,4 @@ function update(email, amount) {
     });
 }
 module.exports = {create, findOne, find, update, all };
+
