@@ -1,4 +1,4 @@
-function Login(){
+function Login(props){
     const [show, setShow]     = React.useState(true);
     const [status, setStatus] = React.useState('');    
    
@@ -33,10 +33,12 @@ function Login(){
   }
   
   function LoginForm(props){
+    const [email, setEmail]  = React.useState('');
+    const[password, setPassword] = React.useState('');
     const [status, setStatus] = React.useState('');
     const [show, setShow] = React.useState(true);
    
-    const ctx = React.userContext(UserContext);
+    const ctx = React.useContext(UserContext);
     let user = ctx.user;
 
     function handle(){
@@ -138,4 +140,3 @@ function Login(){
      disabled={(password && email) ?false:true}
      onClick={handleGoogleLogin}>Login using Google</button>
     </>)}
-  
