@@ -46,12 +46,12 @@ function BalanceForm(props){
     .then(text => {
         try {
             const data = JSON.parse(text);
-            props.setStatus(text);
+            props.setStatus(JSON.stringify(data.balance));
             props.setShow(false);
-            setBalance(user.balance);
+            
             console.log('JSON:', data);
         } catch(err) {
-            props.setStatus(text)
+            setStatus("")
             console.log('err:', text);
         }
     });
