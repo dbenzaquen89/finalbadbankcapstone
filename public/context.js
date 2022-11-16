@@ -1,7 +1,23 @@
 const Route      = ReactRouterDOM.Route;
 const Link       = ReactRouterDOM.Link;
 const HashRouter = ReactRouterDOM.HashRouter;
+const BrowserRouter = ReactRouterDOM.BrowserRouter;
 const UserContext = React.createContext(null);
+
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCWaLhfoSYCWE_TJmcqNVkicnOMA1y3vGU",
+  authDomain: "badbankfinalcapstone.firebaseapp.com",
+  projectId: "badbankfinalcapstone",
+  storageBucket: "badbankfinalcapstone.appspot.com",
+  messagingSenderId: "1033110673105",
+  appId: "1:1033110673105:web:0185ff387d639b6d2357f0"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 
 function Card(props){
     function classes(){
