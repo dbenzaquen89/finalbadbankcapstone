@@ -1,8 +1,11 @@
-
-
 function Deposit(){
     const [show, setShow]     = React.useState(true);
     const [status, setStatus] = React.useState('');  
+    const [amount, setAmount] = React.useState('');
+
+    const ctx = React.useContext(UserContext);
+    let user = ctx.user;
+
   
     return (
       <Card
@@ -17,15 +20,19 @@ function Deposit(){
   }
   
   function DepositMsg(props){
+    const ctx = React.useContext(UserContext);
+    let user = ctx.user;
     return (<>
-      <h5>Success</h5>
-      <button type="submit" 
+      <h5>Successful Deposit</h5>
+      <h6>Current Balance: {user.balance}</h6>
+      <button 
+      type="submit" 
         className="btn btn-light" 
         onClick={() => {
             props.setShow(true);
             props.setStatus('');
         }}>
-          Deposit again
+          Deposit More?
       </button>
     </>);
   } 
@@ -33,9 +40,14 @@ function Deposit(){
   function DepositForm(props){
     const [email, setEmail]   = React.useState('');
     const [amount, setAmount] = React.useState('');
+    const [status, setStatus] = React.useState('');
+    const ctx = React.useContext(UserContext);
   
     function handle(){
-      fetch(`/account/update/${email}/${amount}`)
+      let user = ctx.user;
+      user.balance = Number(user.balance) + Number(amount);
+
+      fetch(`/account/update/${user.email}/${amount}`)
       .then(response => response.text())
       .then(text => {
           try {
